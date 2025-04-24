@@ -1,145 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-        height: 2000px; /* Для демонстрации прокрутки */
-        background: linear-gradient(to bottom, #f0f0f0, #ccc);
-    }
-    .scroll-to-top {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-        background-color: #007bff; /* Цвет фона */
-        color: white; /* Цвет текста */
-        border: none;
-        border-radius: 50%; /* Круглая форма */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-        opacity: 0.7; /* Прозрачность */
-        transition: opacity 0.3s; /* Плавный переход */
-    }
-    .scroll-to-top:hover {
-        opacity: 1; /* Полная непрозрачность при наведении */
-    }
-</style>
-
-
-  <title>Результат обработки результатов EAGLE галактик</title>
-  <style>
+    <style>
       body {
-          font-family: Arial, sans-serif;
-          margin: 0;
-          padding: 20px;
-          background-color: #f4f4f4;
+          height: 2000px; /* Для демонстрации прокрутки */
+          background: linear-gradient(to bottom, #f0f0f0, #ccc);
       }
-      header {
-          background: #007bff;
-          color: white;
-          padding: 10px 0;
-          text-align: center;
+      .scroll-to-top {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          width: 50px;
+          height: 50px;
+          background-color: #007bff; /* Цвет фона */
+          color: white; /* Цвет текста */
+          border: none;
+          border-radius: 50%; /* Круглая форма */
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+          opacity: 0.7; /* Прозрачность */
+          transition: opacity 0.3s; /* Плавный переход */
       }
-      nav {
-          margin: 20px 0;
-          text-align: center;
-      }
-      nav a {
-          margin: 0 15px;
-          text-decoration: none;
-          color: #007bff;
-      }
-      section {
-          margin-bottom: 40px;
-          background: white;
-          padding: 20px;
-          border-radius: 5px;
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-
-      .dropdown {
-          position: relative; /* Позиционируем относительно родителя */
-          display: inline-block; /* Отображаем как строчный блок */
-      }
-
-      .dropdown-content {
-          display: none; /* Скрываем подменю по умолчанию */
-          position: absolute; /* Позиционируем подменю */
-          background-color: white; /* Цвет фона подменю */
-          min-width: 160px; /* Минимальная ширина подменю */
-          box-shadow: 0px 8px 16px rgba(0,0,0,0.2); /* Тень для подменю */
-          z-index: 1; /* Устанавливаем порядок отображения */
-      }
-
-      .dropdown-content a {
-          color: #007bff; /* Цвет текста в подменю */
-          padding: 12px 16px; /* Отступы для ссылок в подменю */
-          text-decoration: none; /* Убираем подчеркивание */
-          display: block; /* Отображаем ссылки как блочные элементы */
-      }
-
-      .dropdown-content a:hover {
-          background-color: #f1f1f1; /* Цвет фона при наведении на ссылку в подменю */
-      }
-
-      .dropdown:hover .dropdown-content {
-          display: block; /* Показываем подменю при наведении на родительский элемент */
+      .scroll-to-top:hover {
+          opacity: 1; /* Полная непрозрачность при наведении */
       }
   </style>
 
+
+    <title>Результат обработки результатов EAGLE галактик</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #007bff;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            margin: 20px 0;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #007bff;
+        }
+        section {
+            margin-bottom: 40px;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .dropdown {
+            position: relative; /* Позиционируем относительно родителя */
+            display: inline-block; /* Отображаем как строчный блок */
+        }
+
+        .dropdown-content {
+            display: none; /* Скрываем подменю по умолчанию */
+            position: absolute; /* Позиционируем подменю */
+            background-color: white; /* Цвет фона подменю */
+            min-width: 160px; /* Минимальная ширина подменю */
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2); /* Тень для подменю */
+            z-index: 1; /* Устанавливаем порядок отображения */
+        }
+
+        .dropdown-content a {
+            color: #007bff; /* Цвет текста в подменю */
+            padding: 12px 16px; /* Отступы для ссылок в подменю */
+            text-decoration: none; /* Убираем подчеркивание */
+            display: block; /* Отображаем ссылки как блочные элементы */
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1; /* Цвет фона при наведении на ссылку в подменю */
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block; /* Показываем подменю при наведении на родительский элемент */
+        }
+    </style>
+</head>
+<body>
+
+  <header>
+      <h1>Результат обработки результатов EAGLE галактик</h1>
+  </header>
+  
   <nav>
-    <a href="#galaxies">Список галактик</a>
-    <a href="#images">Изображения</a>
-    <a href="#method" class="dropbtn">Методика</a>
-    <div class="dropdown">
-      <a href="#run">Обработка галактик</a>
-      <div class="dropdown-content">
-        <a href="#737885">737885</a>
-        <a href="#746518">746518</a>
-        <a href="#754151">754151</a>
-        <a href="#763033">763033</a>
-        <a href="#770934">770934</a>
-        <a href="#780704">780704</a>
-        <a href="#793490">793490</a>
-        <a href="#817104">817104</a>
-        <a href="#833288">833288</a>
-        <a href="#846421">846421</a>
-        <a href="#853401">853401</a>
-        <a href="#860575">860575</a>
-        <a href="#866129">866129</a>
-        <a href="#878368">878368</a>
-        <a href="#892497">892497</a>
-        <a href="#907304">907304</a>
-        <a href="#912390">912390</a>
-        <a href="#917940">917940</a>
-        <a href="#924755">924755</a>
-        <a href="#950105">950105</a>
-        <a href="#955249">955249</a>
-        <a href="#959840">959840</a>
-        <a href="#971267">971267</a>
-        <a href="#1437151">1437151</a>
-        <a href="#1515368">1515368</a>
-        <a href="#1540783">1540783</a>
-        <a href="#1593757">1593757</a>
-        <a href="#1608845">1608845</a>
-        <a href="#1623194">1623194</a>
-        <a href="#1681524">1681524</a>
-        <a href="#1757806">1757806</a>
-        <a href="#1785362">1785362</a>
-      </div>
-  </div> 
-    <div class="dropdown">
-        <a href="#evol">Эволюция галактик</a>
+      <a href="#galaxies">Список галактик</a>
+      <a href="#images">Изображения</a>
+      <a href="#method" class="dropbtn">Методика</a>
+      <div class="dropdown">
+        <a href="#run">Обработка галактик</a>
         <div class="dropdown-content">
-            <a href="#fit1d">1D fit</a>
-            <a href="#fitimfit">Imfit fit</a>
+          <a href="#737885">737885</a>
+          <a href="#746518">746518</a>
+          <a href="#754151">754151</a>
+          <a href="#763033">763033</a>
+          <a href="#770934">770934</a>
+          <a href="#780704">780704</a>
+          <a href="#793490">793490</a>
+          <a href="#817104">817104</a>
+          <a href="#833288">833288</a>
+          <a href="#846421">846421</a>
+          <a href="#853401">853401</a>
+          <a href="#860575">860575</a>
+          <a href="#866129">866129</a>
+          <a href="#878368">878368</a>
+          <a href="#892497">892497</a>
+          <a href="#907304">907304</a>
+          <a href="#912390">912390</a>
+          <a href="#917940">917940</a>
+          <a href="#924755">924755</a>
+          <a href="#950105">950105</a>
+          <a href="#955249">955249</a>
+          <a href="#959840">959840</a>
+          <a href="#971267">971267</a>
+          <a href="#1437151">1437151</a>
+          <a href="#1515368">1515368</a>
+          <a href="#1540783">1540783</a>
+          <a href="#1593757">1593757</a>
+          <a href="#1608845">1608845</a>
+          <a href="#1623194">1623194</a>
+          <a href="#1681524">1681524</a>
+          <a href="#1757806">1757806</a>
+          <a href="#1785362">1785362</a>
         </div>
     </div> 
-    <a href="#results">Результаты обработки</a>
-</nav>
-</head>
+      <div class="dropdown">
+          <a href="#evol">Эволюция галактик</a>
+          <div class="dropdown-content">
+              <a href="#fit1d">1D fit</a>
+              <a href="#fitimfit">Imfit fit</a>
+          </div>
+      </div> 
+      <a href="#results">Результаты обработки</a>
+  </nav>
+</body>
+  
