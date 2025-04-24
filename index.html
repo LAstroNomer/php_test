@@ -1,17 +1,23 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="ru">
 <head>
-
-<title>How to put PHP in HTML - Simple Example</title>
-
+  <meta charset="UTF-8" />
+  <title>Главная страница</title>
 </head>
-
 <body>
 
-<h1><?php echo "This message is from server side." ?></h1>
+<div id="header-placeholder"></div>
+
+<script>
+  fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-placeholder').innerHTML = data;
+    })
+    .catch(error => console.error('Ошибка загрузки шапки:', error));
+</script>
+
+<!-- Основное содержимое страницы -->
 
 </body>
-
 </html>
