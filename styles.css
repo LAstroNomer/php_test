@@ -1,0 +1,17 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+
+.aaa {
+    display: flex;
+    align-items: center; /* Центрирует изображения по вертикали */ 
+}
+
+.aaa img {
+    max-width: 30%; /* Ограничивает ширину изображений */
+    height: auto; /* Сохраняет пропорции изображений */
+    margin: 10px; /* Отступы между изображениями */
+
+}

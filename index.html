@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>Главная страница</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -19,7 +20,23 @@
 
 
 <section id="galaxies">
-  AAAx
+    <h1>Выберите изображение</h1>
+      
+
+    <div id="image-label">Изображение 1</div> <!-- Элемент для отображения текста -->
+    <input type="range" id="image-slider" min="0" max="12" step="1" value="0">
+    
+
+    
+    <div  class="aaa" >
+        <img id="displayed-image" src="" alt="color image" />
+        <img id="displayed-image-2" src="" alt="mass image" />
+        <img id="displayed-image-3" src="" alt="profile image" />
+    </div> 
+
+    <script src="bar_script.js"></script>
+
+
 </section>
 </body>
 </html>
