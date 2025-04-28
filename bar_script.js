@@ -165,6 +165,27 @@ const images3e = [
     
 ];
 
+const images4e = [
+    'images_edge_light_profile/image_28.jpg',
+    'images_edge_light_profile/image_27.jpg',
+    'images_edge_light_profile/image_26.jpg',
+    'images_edge_light_profile/image_25.jpg',
+    'images_edge_light_profile/image_24.jpg',
+    'images_edge_light_profile/image_23.jpg',
+    'images_edge_light_profile/image_22.jpg',
+    'images_edge_light_profile/image_21.jpg',
+    'images_edge_light_profile/image_20.jpg',
+    'images_edge_light_profile/image_19.jpg',
+    'images_edge_light_profile/image_18.jpg',
+    'images_edge_light_profile/image_17.jpg',
+    'images_edge_light_profile/image_16.jpg',
+    'images_edge_light_profile/image_15.jpg',
+    'images_edge_light_profile/image_14.jpg',
+    'images_edge_light_profile/image_13.jpg',
+    'images_edge_light_profile/image_12.jpg',
+    
+];
+
 const imageLabels = [0.00 , 0.10 ,0.18 , 0.27, 0.37 ,0.50,0.62,0.74,0.87,1.00,1.26, 1.49 ,1.74,2.01,2.24,2.48,3.02,3.53,3.98, 
 4.49,5.04,5.49,5.97, 7.05,8.07,8.99,9.99,15.13,20.00
 ];
@@ -180,6 +201,7 @@ const displayedImage5f = document.getElementById('displayed-fimage-5');
 const displayedImage1e = document.getElementById('displayed-eimage-1');
 const displayedImage2e = document.getElementById('displayed-eimage-2');
 const displayedImage3e = document.getElementById('displayed-eimage-3');
+const displayedImage4e = document.getElementById('displayed-eimage-4');
 const imageLabel = document.getElementById('image-label');
 // Устанавливаем начальное изображение
 displayedImage1f.src = images1f[0];
@@ -191,6 +213,7 @@ displayedImage5f.src = images5f[0];
 displayedImage1e.src = images1e[0];
 displayedImage2e.src = images2e[0];
 displayedImage3e.src = images3e[0];
+displayedImage4e.src = images4e[0];
 
 imageLabel.textContent = imageLabels[0];
 // Обработчик события для ползунка
@@ -205,5 +228,6 @@ slider.addEventListener('input', function() {
     displayedImage1e.src = images1e[index]; // Меняем изображение
     displayedImage2e.src = images2e[index]; // Меняем изображение
     displayedImage3e.src = images3e[index]; // Меняем изображение
+    displayedImage4e.src = images4e[index]; // Меняем изображение
     imageLabel.textContent = imageLabels[index]; // Меняем текст над ползунком
 });
