@@ -1,0 +1,36 @@
+# Best-fit model results for imfit 1.8.0 (OpenMP-enabled)
+# Generated on Tue Sep  2 01:30:03 2025 by the following command:
+#    imfit18 -c=imfit.cfg tmp.fits --mask=mask.fits --sky=1e-7 --readnoise=0.0 --save-model=model.fits --save-residual=res.fits --max-threads=12
+
+# Results of fit:
+#   Algorithm: Levenberg-Marquardt: status = 1 -- SUCCESS: Convergence in fit-statistic value.
+#   Fit statistic: chi-squared (data-based errors)
+#   Best-fit value: 10.201783
+#   Reduced value: 0.000439
+#   AIC: 44.228135
+#   BIC: 181.114960
+
+X0		250.5063 # +/- 0.2305
+Y0		250.4294 # +/- 0.1944
+FUNCTION Sersic_GenEllipse
+PA		      0 # +/- 0
+ell		      0 # +/- 0
+c0		      0 # +/- 0
+n		1.17793 # +/- 0.27093
+I_e		0.580259 # +/- 0.20235
+r_e		     10 # +/- 0
+FUNCTION FerrersBar2D
+PA		65.4643 # +/- 4.5461
+ell		0.570775 # +/- 0.068845
+c0		1.51888 # +/- 2.698
+n		      2 # +/- 0
+I_0		2.01822 # +/- 0.52606
+a_bar		13.8504 # +/- 1.5347
+FUNCTION BrokenExponential
+PA		    180 # +/- 0
+ell		1.51747e-09 # +/- 0
+I_0		0.923587 # +/- 0.5457
+h1		12.0616 # +/- 2.5178
+h2		18.4443 # +/- 3.0057
+r_break		45.0258 # +/- 10.469
+alpha		    0.5 # +/- 0

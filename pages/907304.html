@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+<title>907304</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<div id="header-placeholder"></div>
+
+<script>
+  fetch('../header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-placeholder').innerHTML = data;
+    })
+    .catch(error => console.error('Ошибка загрузки шапки:', error));
+</script>
+
+
+<style>
+  .page-wrapper {
+  display: flex;
+  
+  margin: 0;
+  padding: 0;
+  gap: 0; /* Убираем отступы */
+}
+.left-panel-wrapper {
+  width: 60%;
+  padding: 0px 0px;
+}
+
+.content-wrapper {
+  /*width: 250px;*/
+  width: 20%;
+  padding: 0px;
+}
+
+.right-wrapper {
+  /*width: 250px;*/
+  width: 20%;
+
+  padding: 0px;
+}
+
+img {
+    margin-left: 0;
+    padding-left: 0;
+    display: block; /* Убирает лишние отступы вокруг изображения */
+}
+
+.text-display {
+    /* Сохраняем переносы строк и пробелы */
+    white-space: pre-wrap;
+    /* Выравнивание по ширине */
+    text-align: justify;
+    /* Перенос длинных слов */
+    word-wrap: break-word;
+    /* Улучшенный перенос */
+    hyphens: auto;
+    /* Отступ для красной строки */
+    text-indent: 0;
+    /* Межстрочный интервал */
+    line-height: 1.1;
+    /* Отступы между абзацами */
+    margin: 0;
+    padding: 20px;
+    
+    /* Дополнительные стили для читабельности */
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+</style>
+
+
+
+<div id="image-label">Изображение 1</div> <!-- Элемент для отображения текста -->
+  <input type="range" id="image-slider" min="0" max="16" step="1" value="0">
+  
+<div class="page-wrapper">
+  <div class="left-panel-wrapper">
+    <div class="left-panel">
+      <img id="displayed-fimage-1" src="" alt="image" width="100%" />
+      <img id="displayed-fimage-2" src="" alt="rings image" width="100%"/>
+      <script src="../bar1_script.js"></script>
+    </div>
+  </div>
+  
+  <div class="content-wrapper">
+    <div class="text-display">
+      <h3>SDSS r</h3> 
+      <div class="text-display" id="textOutput">Загрузка...</div>
+    </div>
+  </div>
+
+  <div class="right-wrapper">
+    <div class="text-display">
+      <h3>Mass</h3>
+      <div class="text-display" id="textOutput1">Загрузка...</div>
+    </div>
+  </div>
+  
+</div>
+
+
+</body>
+</html>

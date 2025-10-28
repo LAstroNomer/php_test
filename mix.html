@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Микшер 28 позиций</title>
+    <style>
+        .mixer-container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        
+        .slider-container {
+            margin: 30px 0;
+        }
+        
+        .slider {
+            width: 100%;
+            height: 40px;
+            margin: 15px 0;
+        }
+        
+        .position-labels {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .current-position {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: #007bff;
+            margin: 15px 0;
+        }
+        
+        .text-display {
+            margin-top: 20px;
+            padding: 20px;
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            background-color: #f8f9fa;
+            min-height: 300px;
+            max-height: 500px;
+            overflow-y: auto;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .file-info {
+            text-align: center;
+            color: #666;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="mixer-container">
+        <h1>Микшер - 28 позиций</h1>
+        
+        <div class="slider-container">
+            <div class="position-labels">
+                <span>1</span>
+                <span>28</span>
+            </div>
+            <input type="range" min="1" max="28" value="1" step="1" class="slider" id="mixerSlider">
+            <div class="current-position" id="currentPos">Позиция: 1</div>
+        </div>
+        
+        <div class="file-info" id="fileInfo">Файл: 1.txt</div>
+        <div class="text-display" id="textOutput">Загрузка...</div>
+    </div>
+
+    <script>
+        const TOTAL_FILES = 28;
+        let loadedFiles = new Map(); // Храним загруженные файлы
+        let isLoading = false;
+
+        // Ленивая загрузка файлов по требованию
+        async function loadFile(position) {
+            if (loadedFiles.has(position)) {
+                return loadedFiles.get(position);
+            }
+
+            try {
+                const response = await fetch(`${position}.txt`);
+                if (!response.ok) throw new Error(`Файл ${position}.txt не найден`);
+                
+                const text = await response.text();
+                loadedFiles.set(position, text);
+                return text;
+            } catch (error) {
+                console.error(`Ошибка загрузки файла ${position}.txt:`, error);
+                return `Ошибка загрузки файла ${position}.txt`;
+            }
+        }
+
+        // Обновление отображения
+        async function updateDisplay(position) {
+            const textOutput = document.getElementById('textOutput');
+            const currentPos = document.getElementById('currentPos');
+            const fileInfo = document.getElementById('fileInfo');
+            
+            currentPos.textContent = `Позиция: ${position}`;
+            fileInfo.textContent = `Файл: ${position}.txt`;
+            textOutput.textContent = 'Загрузка...';
+
+            const text = await loadFile(position);
+            textOutput.textContent = text;
+        }
+
+        // Оптимизированный обработчик слайдера
+        function initializeSlider() {
+            const slider = document.getElementById('mixerSlider');
+            let updateTimeout;
+
+            slider.addEventListener('input', function() {
+                const position = parseInt(this.value);
+                
+                // Дебаунс для оптимизации
+                clearTimeout(updateTimeout);
+                updateTimeout = setTimeout(() => {
+                    updateDisplay(position);
+                }, 100);
+            });
+        }
+
+        // Предзагрузка соседних файлов
+        async function preloadAdjacentFiles(currentPosition) {
+            const positionsToPreload = [];
+            
+            // Предзагружаем +1 и +2 позиции
+            for (let i = 1; i <= 2; i++) {
+                const nextPos = currentPosition + i;
+                if (nextPos <= TOTAL_FILES && !loadedFiles.has(nextPos)) {
+                    positionsToPreload.push(nextPos);
+                }
+            }
+            
+            // Параллельная загрузка
+            await Promise.all(positionsToPreload.map(pos => loadFile(pos)));
+        }
+
+        // Инициализация
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeSlider();
+            // Загружаем первую позицию сразу
+            updateDisplay(1);
+        });
+    </script>
+</body>
+</html>
