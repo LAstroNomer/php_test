@@ -1,8 +1,60 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-}
+       body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #007bff;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            margin: 20px 0;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #007bff;
+        }
+        section {
+            margin-bottom: 40px;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
+        .dropdown {
+            position: relative; /* Position relative to parent */
+            display: inline-block; /* Display as inline block */
+        }
+
+        .dropdown-content {
+            display: none; /* Hide submenu by default */
+            position: absolute; /* Position the submenu */
+            background-color: white; /* Submenu background color */
+            min-width: 160px; /* Minimum submenu width */
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2); /* Submenu shadow */
+            z-index: 1000; /* Set display order */
+        }
+
+        .dropdown-content a {
+            color: #007bff; /* Text color in submenu */
+            padding: 12px 16px; /* Padding for submenu links */
+            text-decoration: none; /* Remove underline */
+            display: block; /* Display links as block elements */
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1; /* Background color on submenu link hover */
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block; /* Show submenu on parent hover */
+        }
 
 .aaa {
     display: flex;
@@ -49,4 +101,131 @@ body {
     max-width: 100%; /* Ограничивает ширину изображений */
     height: auto; /* Сохраняет пропорции изображений */
     margin: 10px; /* Отступы между изображениями */
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+
+    background-color: #007bff;
+    color: white;
+
+    border: none;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.scroll-to-top:hover {
+    opacity: 1;
+}
+
+ .image-container {
+            display: flex;
+            align-items: center; /* Centers images vertically */
+        }
+        .image-container img {
+            margin: 10px; /* Margins between images */
+            max-width: 40%; /* Limits image width */
+            height: auto; /* Maintains image proportions */
+        }
+        
+.image-container1 {
+            display: flex;
+            align-items: center; /* Centers horizontally */
+            margin-bottom: 20px; /* Bottom margin */
+        }
+        img {
+            max-width: 20%; /* Limits image width */
+            height: auto; /* Maintains proportions */
+        }
+        .caption {
+            font-size: 1.2em; /* Caption font size */
+            color: #333; /* Text color */
+            margin-bottom: 10px; /* Bottom margin from caption */
+        }
+        
+ .image-container2 {
+          display: flex;
+          align-items: center; /* Centers images vertically */
+      }
+      .image-container2 img {
+          margin: 10px; /* Margins between images */
+          max-width: 24%; /* Limits image width */
+          height: auto; /* Maintains image proportions */
+      }
+      
+.image-container3 {
+              display: flex;
+              align-items: center; /* Centers images vertically */
+}
+.image-container3 img {
+    margin: 10px; /* Margins between images */
+    max-width: 100%; /* Limits image width */
+    height: auto; /* Maintains image proportions */
+}
+
+.results-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+}
+
+.result-image {
+    width: 90%;
+}
+
+.result-image img {
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: auto;
+}
+
+.galaxy-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 15px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.galaxy-grid a {
+    display: block;
+    padding: 12px 8px;
+
+    background: #f4f4f4;
+    color: #007bff;
+
+    text-decoration: none;
+    border-radius: 5px;
+
+    font-weight: bold;
+
+    transition: background-color 0.2s;
+}
+
+.galaxy-grid a:hover {
+    background: #e0e0e0;
+}
+
+.section-description {
+    max-width: 900px;
+    margin: 0 auto 25px auto;
+    color: #555;
+    line-height: 1.6;
+    font-size: 16px;
 }

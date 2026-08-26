@@ -1,101 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <style>
-      body {
-          height: 2000px; /* To demonstrate scrolling */
-          background: linear-gradient(to bottom, #f0f0f0, #ccc);
-      }
-      .scroll-to-top {
-          position: fixed;
-          bottom: 20px;
-          right: 20px;
-          width: 50px;
-          height: 50px;
-          background-color: #007bff; /* Background color */
-          color: white; /* Text color */
-          border: none;
-          border-radius: 50%; /* Circular shape */
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-          opacity: 0.7; /* Transparency */
-          transition: opacity 0.3s; /* Smooth transition */
-      }
-      .scroll-to-top:hover {
-          opacity: 1; /* Full opacity on hover */
-      }
-  </style>
-
-
-    <title>EAGLE Galaxy Processing Results</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-        header {
-            background: #007bff;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
-        nav {
-            margin: 20px 0;
-            text-align: center;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #007bff;
-        }
-        section {
-            margin-bottom: 40px;
-            background: white;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .dropdown {
-            position: relative; /* Position relative to parent */
-            display: inline-block; /* Display as inline block */
-        }
-
-        .dropdown-content {
-            display: none; /* Hide submenu by default */
-            position: absolute; /* Position the submenu */
-            background-color: white; /* Submenu background color */
-            min-width: 160px; /* Minimum submenu width */
-            box-shadow: 0px 8px 16px rgba(0,0,0,0.2); /* Submenu shadow */
-            z-index: 1; /* Set display order */
-        }
-
-        .dropdown-content a {
-            color: #007bff; /* Text color in submenu */
-            padding: 12px 16px; /* Padding for submenu links */
-            text-decoration: none; /* Remove underline */
-            display: block; /* Display links as block elements */
-        }
-
-        .dropdown-content a:hover {
-            background-color: #f1f1f1; /* Background color on submenu link hover */
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block; /* Show submenu on parent hover */
-        }
-    </style>
-</head>
-<body>
-
   <header>
       <h1>EAGLE Galaxy Processing Results</h1>
   </header>
@@ -103,7 +5,7 @@
   <nav>
       <a href="#galaxies">List of Galaxies</a>
       <a href="#images">Images</a>
-      <a href="#method" class="dropbtn">Methodology</a>
+      <!--
       <div class="dropdown">
         <a href="#run">Galaxy Processing</a>
         <div class="dropdown-content">
@@ -142,12 +44,12 @@
         </div>
     </div> 
       <div class="dropdown">
+      -->
           <a href="#evol">Galaxy Evolution</a>
           <div class="dropdown-content">
-              <a href="#fitimfit">Imfit fit</a>
+              <a href="#fitimfit">IMFIT fit</a>
               <a href="#trecks">Evolutionary Tracks</a>
           </div>
       </div> 
       <a href="#results">Processing Results</a>
   </nav>
-</body>
